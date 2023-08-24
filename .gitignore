@@ -1,0 +1,8 @@
+/GPT-1/data
+/GPT-2/data
+/GPT-3/data
+/GPT-1/train-log
+/GPT-2/train-log
+/GPT-3/train-log
+.history/
+GPT-BMT/

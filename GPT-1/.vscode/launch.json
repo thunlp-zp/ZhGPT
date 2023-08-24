@@ -1,0 +1,55 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.1.0",
+    "configurations": [
+        {
+            "python": "/home/zhoupeng/miniconda3/bin/python3",
+            "name": "Python: StartDistPreTrain",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/zhoupeng/miniconda3/lib/python3.9/site-packages/torch/distributed/launch.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--nproc_per_node=4",
+                "--nnodes=1",
+                "/home/zhoupeng/zh2nlp_expr/ZhGPT/GPT-1/main.py",
+                "--train_corpus",
+                "/home/zhoupeng/zh2nlp_expr/ZhGPT/GPT-1/data/poetry.txt",
+                "--vocab_file",
+                "/home/zhoupeng/zh2nlp_expr/ZhGPT/GPT-1/data/poetry_vocab.txt",
+                "--do_pretrain",
+                "--distributed",
+                "--n_gpus", 
+                "4"
+            ]
+        },
+        {
+            "python": "/home/zhoupeng/miniconda3/bin/python3",
+            "name": "Python: StartPreTrain",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/zhoupeng/zh2nlp_expr/ZhGPT/GPT-1/main.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--train_corpus",
+                "/home/zhoupeng/zh2nlp_expr/ZhGPT/GPT-1/data/poetry.txt",
+                "--vocab_file",
+                "/home/zhoupeng/zh2nlp_expr/ZhGPT/GPT-1/data/poetry_vocab.txt",
+                "--do_pretrain",
+            ]
+        },
+        {
+            "python": "/home/zhoupeng/miniconda3/bin/python3",
+            "name": "Python: UnitTest",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/zhoupeng/zh2nlp_expr/ZhGPT/GPT-1//unittest/test_model.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+        }
+    ]
+}
